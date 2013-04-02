@@ -2,18 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36f777d4-46e4-442c-ab60-0aec0ffac475" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AngularSF/www/inline.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AngularSF/www/sfdc.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/AngularSF/www/project.js" afterPath="$PROJECT_DIR$/AngularSF/www/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AngularSF.xcodeproj/project.xcworkspace/xcuserdata/rraodv.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/AngularSF.xcodeproj/project.xcworkspace/xcuserdata/rraodv.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AngularSF.xcodeproj/xcuserdata/rraodv.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist" afterPath="$PROJECT_DIR$/AngularSF.xcodeproj/xcuserdata/rraodv.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AngularSF/www/index.html" afterPath="$PROJECT_DIR$/AngularSF/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AngularSF/www/angular/angular-force.js" afterPath="$PROJECT_DIR$/AngularSF/www/angular/angular-force.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AngularSF/www/app.js" afterPath="$PROJECT_DIR$/AngularSF/www/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AngularSF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364877314999" ignored="false" />
-    <file path="/index.html" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364880005844" ignored="false" />
-    <file path="/app.js" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364879838311" ignored="false" />
+    <file path="/Dummy.txt" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364912929495" ignored="false" />
+    <file path="/index.html" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364923471173" ignored="false" />
+    <file path="/app.js" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364922834060" ignored="false" />
+    <file path="$PROJECT_DIR$/../AngularJQM/nodejs/server/proxy.js" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364883191685" ignored="false" />
+    <file path="$PROJECT_DIR$/../AngularForce/list.html" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364922518215" ignored="false" />
+    <file path="/list.html" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364922509314" ignored="false" />
+    <file path="/angular-force.js" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364916707091" ignored="false" />
+    <file path="$PROJECT_DIR$/../AngularForce/sfdc.js" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364922036987" ignored="false" />
+    <file path="$PROJECT_DIR$/../AngularForce/project.js" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364922315634" ignored="false" />
+    <file path="$PROJECT_DIR$/../AngularForce/index.html" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364923823305" ignored="false" />
+    <file path="$PROJECT_DIR$/../AngularForce/app.js" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364923016097" ignored="false" />
+    <file path="$PROJECT_DIR$/../AngularForce/detail.html" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364922574265" ignored="false" />
+    <file path="$PROJECT_DIR$/../AngularForce/nodejs/server/app.js" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364923273500" ignored="false" />
+    <file path="$PROJECT_DIR$/../AngularForce/.gitignore" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364924107442" ignored="false" />
+    <file path="/.gitignore" changelist="36f777d4-46e4-442c-ab60-0aec0ffac475" time="1364924034638" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +43,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AngularSF/www/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="20" selection-start="722" selection-end="722" vertical-scroll-proportion="0.4390244">
+            <state line="13" column="16" selection-start="666" selection-end="666" vertical-scroll-proportion="-4.6153846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="angular-force.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AngularSF/www/angular/angular-force.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="14" selection-start="289" selection-end="289" vertical-scroll-proportion="0.19512194">
               <folding />
             </state>
           </provider>
@@ -63,6 +82,7 @@
         <option value="$PROJECT_DIR$/AngularSF/www/project.js" />
         <option value="$PROJECT_DIR$/AngularSF/www/index.html" />
         <option value="$PROJECT_DIR$/AngularSF/www/app.js" />
+        <option value="$PROJECT_DIR$/AngularSF/www/angular/angular-force.js" />
       </list>
     </option>
   </component>
@@ -148,6 +168,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AngularSF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AngularSF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AngularSF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -176,25 +218,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="774" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12251392" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23309466" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -258,6 +300,13 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/AngularSF/www/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="17" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AngularSF/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="96" column="34" selection-start="3189" selection-end="3189" vertical-scroll-proportion="0.17850637">
@@ -267,7 +316,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AngularSF/www/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="20" selection-start="722" selection-end="722" vertical-scroll-proportion="0.4390244">
+        <state line="13" column="16" selection-start="666" selection-end="666" vertical-scroll-proportion="-4.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AngularSF/www/angular/angular-force.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="14" selection-start="289" selection-end="289" vertical-scroll-proportion="0.19512194">
           <folding />
         </state>
       </provider>
