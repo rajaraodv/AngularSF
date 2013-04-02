@@ -52,7 +52,7 @@ if (forcetk.Client === undefined) {
      * @param [clientId=null] 'Consumer Key' in the Remote Access app settings
      * @param [loginUrl='https://login.salesforce.com/'] Login endpoint
      * @param [proxyUrl=null] Proxy URL. Omit if running on Visualforce or 
-     *                  Cordova etc
+     *                  PhoneGap etc
      * @constructor
      */
     forcetk.Client = function(clientId, loginUrl, proxyUrl) {
@@ -60,7 +60,7 @@ if (forcetk.Client === undefined) {
         this.loginUrl = loginUrl || 'https://login.salesforce.com/';
         if (typeof proxyUrl === 'undefined' || proxyUrl === null) {
             if (location.protocol === 'file:') {
-                // In Cordova
+                // In PhoneGap
                 this.proxyUrl = null;
             } else {
                 // In Visualforce
@@ -78,16 +78,8 @@ if (forcetk.Client === undefined) {
         this.apiVersion = null;
         this.instanceUrl = null;
         this.asyncAjax = true;
-        this.userAgentString = null;
     }
 
-    /**
-    * Set a User-Agent to use in the client.
-    * @param uaString A User-Agent string to use for all requests.
-    */
-    forcetk.Client.prototype.setUserAgentString = function(uaString) {
-        this.userAgentString = uaString;
-    } 
     /**
      * Set a refresh token in the client.
      * @param refreshToken an OAuth refresh token
@@ -132,7 +124,7 @@ if (forcetk.Client === undefined) {
     forcetk.Client.prototype.setSessionToken = function(sessionId, apiVersion, instanceUrl) {
         this.sessionId = sessionId;
         this.apiVersion = (typeof apiVersion === 'undefined' || apiVersion === null)
-        ? 'v23.0': apiVersion;
+        ? 'v24.0': apiVersion;
         if (typeof instanceUrl === 'undefined' || instanceUrl == null) {
             // location.hostname can be of the form 'abc.na1.visual.force.com' or
             // 'na1.salesforce.com'. Split on '.', and take the [1] or [0] element
@@ -183,12 +175,113 @@ if (forcetk.Client === undefined) {
                 if (that.proxyUrl !== null) {
                     xhr.setRequestHeader('SalesforceProxy-Endpoint', url);
                 }
-                xhr.setRequestHeader(that.authzHeader, "Bearer " + that.sessionId);
+                xhr.setRequestHeader(that.authzHeader, "OAuth " + that.sessionId);
                 xhr.setRequestHeader('X-User-Agent', 'salesforce-toolkit-rest-javascript/' + that.apiVersion);
-                		
-                if (that.userAgentString !== null) {
-                    xhr.setRequestHeader('User-Agent',that.userAgentString);
+            }
+        });
+    }
+
+    /**
+     * Utility function to query the Chatter API and download a file
+     * Note, raw XMLHttpRequest because JQuery mangles the arraybuffer
+     * This should work on any browser that supports XMLHttpRequest 2 because arraybuffer is required. 
+     * For mobile, that means iOS >= 5 and Android >= Honeycomb
+     * @author Tom Gersic
+     * @param path resource path relative to /services/data
+     * @param mimetype of the file
+     * @param callback function to which response will be passed
+     * @param [error=null] function to which request will be passed in case of error
+     * @param rety true if we've already tried refresh token flow once
+     **/
+    forcetk.Client.prototype.getChatterFile = function(path,mimeType,callback,error,retry) {
+        var that = this;
+        var url = this.instanceUrl + path;
+
+        var request = new XMLHttpRequest();
+                  
+        request.open("GET",  (this.proxyUrl !== null) ? this.proxyUrl: url, true);
+        request.responseType = "arraybuffer";
+        
+        request.setRequestHeader(that.authzHeader, "OAuth " + that.sessionId);
+        request.setRequestHeader('X-User-Agent', 'salesforce-toolkit-rest-javascript/' + that.apiVersion);
+        if (this.proxyUrl !== null) {
+            request.setRequestHeader('SalesforceProxy-Endpoint', url);
+        }
+        
+        request.onreadystatechange = function() {
+            // continue if the process is completed
+            if (request.readyState == 4) {
+                // continue only if HTTP status is "OK"
+                if (request.status == 200) {
+                    try {
+                        // retrieve the response
+                        callback(request.response);
+                    }
+                    catch(e) {
+                        // display error message
+                        alert("Error reading the response: " + e.toString());
+                    }
                 }
+                //refresh token in 401
+                else if(request.status == 401 && !retry) {
+                    that.refreshAccessToken(function(oauthResponse) {
+                        that.setSessionToken(oauthResponse.access_token, null,oauthResponse.instance_url);
+                        that.getChatterFile(path, mimeType, callback, error, true);
+                    },
+                    error);
+                } 
+                else {
+                    // display status message
+                    error(request,request.statusText,request.response);
+                }
+            }            
+            
+        }
+
+        request.send();
+        
+    }
+
+    /*
+     * Low level utility function to call the Salesforce endpoint specific for Apex REST API.
+     * @param path resource path relative to /services/apexrest
+     * @param callback function to which response will be passed
+     * @param [error=null] function to which jqXHR will be passed in case of error
+     * @param [method="GET"] HTTP method for call
+     * @param [payload=null] payload for POST/PATCH etc
+     */
+    forcetk.Client.prototype.apexrest = function(path, callback, error, method, payload, retry) {
+        var that = this;
+        var url = this.instanceUrl + '/services/apexrest' + path;
+
+        $j.ajax({
+            type: method || "GET",
+            async: this.asyncAjax,
+            url: (this.proxyUrl !== null) ? this.proxyUrl: url,
+            contentType: 'application/json',
+            cache: false,
+            processData: false,
+            data: payload,
+            success: callback,
+            error: (!this.refreshToken || retry ) ? error : function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 401) {
+                    that.refreshAccessToken(function(oauthResponse) {
+                        that.setSessionToken(oauthResponse.access_token, null,
+                        oauthResponse.instance_url);
+                        that.ajax(path, callback, error, method, payload, true);
+                    },
+                    error);
+                } else {
+                    error(jqXHR, textStatus, errorThrown);
+                }
+            },
+            dataType: "json",
+            beforeSend: function(xhr) {
+                if (that.proxyUrl !== null) {
+                    xhr.setRequestHeader('SalesforceProxy-Endpoint', url);
+                }
+                xhr.setRequestHeader(that.authzHeader, "OAuth " + that.sessionId);
+                xhr.setRequestHeader('X-User-Agent', 'salesforce-toolkit-rest-javascript/' + that.apiVersion);
             }
         });
     }
@@ -198,7 +291,7 @@ if (forcetk.Client === undefined) {
      * available, including the version, label, and a link to each version's
      * root.
      * @param callback function to which response will be passed
-     * @param [error=null] function to which jqXHR will be passed in ca0 of error
+     * @param [error=null] function to which jqXHR will be passed in case of error
      */
     forcetk.Client.prototype.versions = function(callback, error) {
         this.ajax('/', callback, error);
@@ -271,7 +364,7 @@ if (forcetk.Client === undefined) {
      * @param [error=null] function to which jqXHR will be passed in case of error
      */
     forcetk.Client.prototype.retrieve = function(objtype, id, fieldlist, callback, error) {
-        if (!arguments[4]) {
+        if (arguments.length == 4) {
             error = callback;
             callback = fieldlist;
             fieldlist = null;
@@ -346,7 +439,7 @@ if (forcetk.Client === undefined) {
      * @param [error=null] function to which jqXHR will be passed in case of error
      */
     forcetk.Client.prototype.search = function(sosl, callback, error) {
-        this.ajax('/' + this.apiVersion + '/search?q=' + escape(sosl)
+        this.ajax('/' + this.apiVersion + '/search?s=' + escape(sosl)
         , callback, error);
     }
 }

@@ -171,6 +171,9 @@ cordova.define("salesforce/util/bootstrap", function(require, exports, module) {
      * loaded.
      */
     var onDeviceReady = function() {
+            
+               
+               
         logger.logToConsole("onDeviceReady called: Cordova is ready.");
         var oauth = require("salesforce/plugin/oauth");
         var event = require("salesforce/util/event");
